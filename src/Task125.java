@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Task12 extends JFrame {
+public class Task125 extends JFrame {
     private JTextField textField;
     private JPasswordField passwordField;
     private JTextArea textArea;
@@ -14,7 +14,7 @@ public class Task12 extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Task12 frame = new Task12();
+                    Task125 frame = new Task125();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace(System.err);
@@ -23,11 +23,11 @@ public class Task12 extends JFrame {
         });
     }
 
-    public Task12() throws HeadlessException {
+    public Task125() throws HeadlessException {
         this("Log in");
     }
 
-    public Task12(String title) throws HeadlessException {
+    public Task125(String title) throws HeadlessException {
         super(title); // Wywołujemy konstruktor klasy bazowej, aby ustawić tytuł okna
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -99,6 +99,16 @@ public class Task12 extends JFrame {
         });
         contentPane.add(changePositionButton);
 
+        JButton checkPasswordButton = new JButton("Sprawdź siłę hasła");
+        checkPasswordButton.setBounds(170, 300, 200, 30);
+        checkPasswordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                checkPassword();
+            }
+        });
+        contentPane.add(checkPasswordButton);
+
         // Dodajemy JTextArea
         textArea = new JTextArea();
         textArea.setBounds(10, 140, 250, 100);
@@ -106,21 +116,44 @@ public class Task12 extends JFrame {
 
     }
 
+    private void checkPassword() {
+        String password = new String(passwordField.getPassword());
+        String message;
+        if (password.isEmpty()) {
+            message = "Nie wprowadzono hasła!";
+        } else if (password.length() < 8) {
+            message = "Hasło jest za krótkie!";
+        } else if (!password.matches(".*[A-Z].*")) {
+            message = "Hasło musi zawierać co najmniej jedną wielką literę!";
+        } else if (!password.matches(".*[a-z].*")) {
+            message = "Hasło musi zawierać co najmniej jedną małą literę!";
+        } else if (!password.matches(".*\\d.*")) {
+            message = "Hasło musi zawierać co najmniej jedną cyfrę!";
+        } else if (!password.matches(".*[!@#$%^&*()].*")) {
+            message = "Hasło musi zawierać co najmniej jeden znak specjalny!";
+        } else {
+            message = "Hasło jest silne!";
+        }
+        JOptionPane.showMessageDialog(this, message, "Siła hasła", JOptionPane.INFORMATION_MESSAGE);
+    }
+
     private void changeColor() {
         JComponent selectedElement = chooseElement();
         if (selectedElement == null) {
             return;
         }
-        Color color = JColorChooser.showDialog(Task12.this, "Wybierz kolor", Color.WHITE);
+        Color color = JColorChooser.showDialog(Task125.this, "Wybierz kolor", Color.WHITE);
         selectedElement.setBackground(color);
     }
 
     private void changeSize() {
-        JComponent selectedElement = chooseElement(new String[]{"Pole tekstowe", "Pole hasłowe", "Pole wyświetlenia tekstu", "Przycisk 'Pokaż login i hasło'"});
+        JComponent selectedElement = chooseElement(new String[]{"Pole tekstowe", "Pole hasłowe",
+                "Pole wyświetlenia tekstu", "Przycisk 'Pokaż login i hasło'"});
         if (selectedElement == null) {
             return;
         }
-        Integer[] coordinates = getCoordinates("Podaj nowy rozmiar w formacie: szerokość, wysokość", "Zmiana rozmiaru");
+        Integer[] coordinates = getCoordinates("Podaj nowy rozmiar w formacie: szerokość, wysokość",
+                "Zmiana rozmiaru");
         if (coordinates == null) {
             return;
         }
@@ -128,7 +161,8 @@ public class Task12 extends JFrame {
     }
 
     private void changePosition() {
-        JComponent selectedElement = chooseElement(new String[]{"Pole tekstowe", "Pole hasłowe", "Pole wyświetlenia tekstu", "Przycisk 'Pokaż login i hasło'"});
+        JComponent selectedElement = chooseElement(new String[]{"Pole tekstowe", "Pole hasłowe",
+                "Pole wyświetlenia tekstu", "Przycisk 'Pokaż login i hasło'"});
         if (selectedElement == null) {
             return;
         }
@@ -148,7 +182,8 @@ public class Task12 extends JFrame {
                 int height = Integer.parseInt(sizes[1].trim());
                 return new Integer[]{width, height};
             } catch (NumberFormatException|ArrayIndexOutOfBoundsException e) {
-                JOptionPane.showMessageDialog(this, "Nieprawidłowy format rozmiaru", "Błąd", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Nieprawidłowy format rozmiaru",
+                        "Błąd", JOptionPane.ERROR_MESSAGE);
                 return null;
             }
         }
@@ -169,7 +204,7 @@ public class Task12 extends JFrame {
 
     private JComponent chooseElement(String[] options){
         String selectedOption = (String) JOptionPane.showInputDialog(
-                Task12.this,
+                Task125.this,
                 "Wybierz opcję:",
                 "Wybór opcji",
                 JOptionPane.QUESTION_MESSAGE,
