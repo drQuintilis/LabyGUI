@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb4b63d2-f94c-462c-a0d9-77abcff868da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MainWindow.java" afterDir="false" />
+    <list default="true" id="fb4b63d2-f94c-462c-a0d9-77abcff868da" name="Changes" comment="Task 1, Lab 2: done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +44,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Docker",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -71,11 +71,28 @@
       <option name="presentableId" value="Default" />
       <updated>1732128558132</updated>
       <workItem from="1732128559215" duration="1020000" />
-      <workItem from="1732129639287" duration="4819000" />
+      <workItem from="1732129639287" duration="9436000" />
     </task>
+    <task id="LOCAL-00001" summary="Task 1, Lab 2: done">
+      <option name="closed" value="true" />
+      <created>1732139293292</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732139293292</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Task 1, Lab 2: done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task 1, Lab 2: done" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
