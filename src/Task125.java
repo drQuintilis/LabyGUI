@@ -193,7 +193,7 @@ public class Task125 extends JFrame {
     private void printTextFields() {
         String text = textField.getText(); // Uzyskujemy tekst z textField
         String password = passwordField.getText(); // Uzyskujemy tekst z passwordField
-        textArea.setText("Text: " + text + "\nPassword: " + password); // Ustawiamy tekst w textArea
+        textArea.setText("Login: " + text + "\nPassword: " + password); // Ustawiamy tekst w textArea
     }
 
     private JComponent chooseElement(){
